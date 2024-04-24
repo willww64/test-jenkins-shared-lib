@@ -6,7 +6,11 @@ def call(body) {
     body()
 
     pipeline {
-        agent none
+        // [Pipeline] End of Pipeline
+        // ERROR: Attempted to execute a step that requires a node context while ‘agent none’ was specified. Be sure to specify your own ‘node { ... }’ blocks when using ‘agent none’.
+        // Finished: FAILURE
+        // agent none
+        agent any
         stages {
             stage("echo parameters") {
                 steps {
