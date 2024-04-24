@@ -19,9 +19,9 @@ def call(body) {
             }
             stage("Prepare Build Environment") {
                 steps {
-                    prepareBuildEnvironment()
-                    helloWorld(name: "prepareBuildEnvironment")
-                    helloWorldExternal()
+                    echo 'prepareBuildEnvironment()'
+                    echo 'helloWorld(name: "prepareBuildEnvironment")'
+                    echo 'helloWorldExternal()'
                 }
             }
             stage("Source Code Checkout") {
@@ -44,12 +44,12 @@ def call(body) {
             }
             stage("Publish Artifacts") {
                 steps {
-                    publishArtifacts(name: "publishArtifacts")
+                    echo 'publishArtifacts(name: "publishArtifacts")'
                 }
             }
             stage("Deploy Application") {
                 steps {
-                    deployApplication(name: "deployApplication")
+                    echo 'deployApplication(name: "deployApplication")'
                 }
             }
             //stage("Long Running Stage") {
