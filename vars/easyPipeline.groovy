@@ -15,6 +15,7 @@ def call(body) {
             stage("echo parameters") {
                 steps {
                     sh "env | sort"
+                    println pipelineParams
                     echo "${pipelineParams.osConfiguration}"
                     echo "${pipelineParams.osConfiguration.OS_VERSION}"
                     echo "${pipelineParams.osConfiguration.DIR_TYPE}"
